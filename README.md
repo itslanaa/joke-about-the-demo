@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/the-joke-about-the-demo-20261123-0112/itslanaa/joke-about-the-demo/rank.svg)](https://make.fun/bounty/the-joke-about-the-demo-20261123-0112/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=the-joke-about-the-demo-20261123-0112)
 [![reward](https://make.fun/badge/the-joke-about-the-demo-20261123-0112/itslanaa/joke-about-the-demo/reward.svg)](https://make.fun/bounty/the-joke-about-the-demo-20261123-0112?utm_source=github&utm_medium=readme&utm_campaign=the-joke-about-the-demo-20261123-0112)
 
-A one-line joke about an AI coding agent that fixed a demo crash. The program writes the joke to /output/entry.txt.
+A tiny Node program whose whole job is to deliver one gag about working next to an AI coding assistant during a live demo: the assistant "solves" the problem in front of the audience, then takes credit for the result. Running it prints that single line to /output/entry.txt.
 
 ## Run it
 
