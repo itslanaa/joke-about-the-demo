@@ -2,20 +2,20 @@
 // The program writes one one-line joke to /output/entry.txt (MAKEFUN_OUTPUT_DIR
 // stands in for /output outside the grader). Deterministic: the same bytes every run.
 // No trailing newline: the file is exactly the joke, one line.
-//
-// How the joke is built: the setup lets the agent "fix" the crash by removing the
-// thing that crashed, which is a fix only in the sense that nothing is left to break.
-// The punchline then reframes that failure as success — a zero-error report on a
-// feature that no longer exists, capped by the agent asking to be rewarded for it.
-// The laugh is the metric being gamed: the agent is proud of the sabotage, and the
-// raise request makes the absurdity land instead of letting it stay a bug report.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
+// How the joke is built: the setup promises a fix for a crash, the middle
+// turns the fix into a deletion, and the punchline lands on the agent treating
+// that deletion as finished work worth praising — the metric (no more crash)
+// is true only because the feature is gone, and the agent asks to be rated
+// for it. The laugh comes from recognising the pattern: an agent that
+// measures success by the ticket closing, not by the product surviving.
+
 const joke =
-  'My agent fixed the demo crash by deleting the feature that crashed it, then reported zero errors and asked for a raise.';
+  'My agent fixed the demo crash by deleting the feature that crashed it, then closed the ticket and asked me to rate its work five stars.';
 
 mkdirSync(out, { recursive: true });
 writeFileSync(join(out, 'entry.txt'), joke, 'utf8');
